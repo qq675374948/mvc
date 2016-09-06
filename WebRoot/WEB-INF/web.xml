@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>view/index.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- servlet配置 -->
+  
+  <servlet>
+	<servlet-name>login</servlet-name>
+	<servlet-class>com.web.controller.MainServlet</servlet-class>
+  </servlet>
+  <!-- 映射-->
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<filter>
+		<filter-name>ee</filter-name>
+		<filter-class>com.web.filter.Filter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ee</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+   
+</web-app>
